@@ -1,0 +1,84 @@
+---
+import FlutterIcon from "../icons/FlutterIcon.astro";
+import LinuxIcon from "../icons/LinuxIcon.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import TailwindIcon from "../icons/TailwindIcon.astro";
+import MomotusPOS from "../../../public/img/momotus-pos.webp";
+import MomotusWeb from "../../../public/img/momotus-web.webp";
+import { Image } from "astro:assets";
+import SocialPill from "../ui/SocialPill.astro";
+import LinkIcon from "../icons/LinkIcon.astro";
+import RustIcon from "../icons/RustIcon.astro";
+
+const TAGS = {
+    FLUTTER: {
+      name: "Flutter",
+      icon: FlutterIcon
+    },
+    LINUX: {
+      name: "Linux",
+      icon: LinuxIcon
+    },
+    ASTRO: {
+      name: "Astro",
+      icon: AstroIcon
+    },
+    TAILWIND: {
+      name: "TailwindCSS",
+      icon: TailwindIcon
+    },
+    RUST: {
+      name: "Rust",
+      icon: RustIcon
+    }
+}
+
+
+const PROJECTS = [
+  {
+    title: "Momotus POS (no released yet)",
+    desc: "Momotus POS is designed to streamline retail operations, offering an intuitive interface that simplifies sales, inventory management, and customer transactions. Built with a focus on speed and reliability, it provides real-time data insights, seamless integration with payment gateways, and customizable features tailored to meet the needs of small to medium-sized businesses. Whether you’re managing a single store or multiple locations, our POS ensures efficient, secure, and user-friendly experiences for both staff and customers.",
+    image: MomotusPOS,
+    tags: [TAGS.FLUTTER, TAGS.LINUX, TAGS.RUST],
+    url: "#projects"
+  },
+  {
+    title: "Momotus Website",
+    desc: "Welcome to our landing page, where we offer cutting-edge solutions in cybersecurity, cloud computing, app development, and more. At Momotus, we are dedicated to empowering your business with state-of-the-art technologies and services. From robust security measures to safeguard your data, to scalable cloud solutions and innovative app development, we provide a comprehensive suite of services designed to drive growth and efficiency. Explore our offerings and discover how we can help you stay ahead in the digital landscape.",
+    image: MomotusWeb,
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+    url: "https://momotus.systems"
+  }
+]
+---
+
+<div>
+  {
+    PROJECTS.map(({title, desc, tags, image, url}) => (
+      <article class="mt-12 -z-10">
+          <div>
+            <div class="flex justify-between items-center my-1">
+              <h3 class="text-white font-semibold text-xl">{title}</h3>
+              <SocialPill url={url}>
+                <LinkIcon class="stroke-white"/>
+                Link
+              </SocialPill>
+            </div>
+            <p class="text-white/60 text-wrap">{desc}</p>
+          </div>
+        </div>
+        <ul class="flex items-center gap-4 my-3">
+          {
+            tags.map(tag => (
+              <div class="flex items-center gap-x-2 rounded-lg px-3 py-1 bg-white font-semibold text-sm">
+                <tag.icon class="size-5"/>
+                <li class="">{tag.name}</li>
+              </div>
+            ))
+          }
+        </ul>
+        <Image src={image} alt="imageCode" class="rounded-lg drop-shadow-lg shadow-white/10">
+      </article>
+    ))
+  }
+</div>

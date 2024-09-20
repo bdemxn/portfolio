@@ -1,0 +1,53 @@
+---
+import WorldIcon from "../icons/WorldIcon.astro";
+import SocialPill from "../ui/SocialPill.astro";
+import ExperienceSection from "./ExperienceSection.astro";
+import LinkIcon from "../icons/LinkIcon.astro";
+
+const EXPERIENCE = [
+  {
+    company: "Momotus Sytems",
+    date: "July 2024 - Current",
+    position: "Software Developer",
+    desc: "I lead the design and development of user interfaces and experiences for diverse digital products, managing project lifecycles from planning to execution, ensuring timely delivery and client satisfaction. I specialize in building and maintaining high-quality landing pages using tools like React, Astro, and NodeJS, with a focus on responsive design and performance optimization."
+  },
+  {
+    company: "Microsoft/Concentrix",
+    date: "April 2023 - July 2024",
+    position: "Cloud Support Engineer",
+    desc: "As a Cloud Support Engineer, I excel in Microsoft 365 integration, including full on-premises and hybrid environments, Active Directory management, and SSO implementation with Microsoft Entra ID. I have hands-on expertise in deploying Microsoft Intune, managing VoIP via Direct Routing in Teams, and troubleshooting identity solutions, ensuring seamless operations across cloud and local infrastructures."
+  },
+  {
+    company: "Newspaper",
+    date: "January 2023 - April 2023",
+    position: "Junior Front-End Developer",
+    desc: "As a front-end developer for Newspaper, I utilize JavaScript, primarily React, to build dynamic news platforms. Leveraging TailwindCSS for responsive design and Figma for UI/UX prototyping, I deliver user-centered solutions that enhance the website's global news delivery experience."
+  },
+  {
+    company: "Global Training Nicaraguan Institute",
+    date: "January 2022 - January 2023",
+    position: "IT Specialist",
+    desc: "I developed a user-friendly environment for the institute using Google Workspace, addressing key issues for GTNI such as PC maintenance, networking, and quality assurance for products."
+  }
+]
+---
+
+<main id="experience" class="md:mt-[10rem] mt-[6rem]">
+  <section class="flex items-center gap-x-2">
+    <WorldIcon class="stroke-white size-10"/>
+    <h1 class="md:text-3xl text-xl font-extrabold text-white">My Experience</h1>
+    <div class="ml-auto">
+      <SocialPill url="https://momotus.systems/">
+        <LinkIcon class="stroke-white"/>
+        My job
+      </SocialPill>
+    </div>
+  </section>
+  <section class="mt-10">
+    {
+      EXPERIENCE.map(exp => (
+        <ExperienceSection company={exp.company} date={exp.date} desc={exp.desc} position={exp.position}/>
+      ))
+    }
+  </section>
+</main>

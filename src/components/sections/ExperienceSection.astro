@@ -1,0 +1,47 @@
+---
+interface Props {
+  company: string;
+  date: string;
+  position: string;
+  desc: string;
+}
+
+const {company, date, position, desc} = Astro.props;
+---
+
+<!-- Timeline -->
+<div>
+  <!-- Heading -->
+  <div class="ps-2 my-2 first:mt-3">
+    <h3 class="text-xs font-medium uppercase text-white">
+      {date}
+    </h3>
+  </div>
+  <!-- End Heading -->
+
+  <!-- Item -->
+  <div class="flex gap-x-3">
+    <!-- Icon -->
+    <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200">
+      <div class="relative z-10 size-7 flex justify-center items-center">
+        <div class="size-2 rounded-full bg-blue-500"></div>
+      </div>
+    </div>
+    <!-- End Icon -->
+
+    <!-- Right Content -->
+    <div class="grow pt-0.5 pb-8">
+      <h3 class="flex gap-x-1.5 font-semibold text-blue-500">
+        {company}
+      </h3>
+      <h3 class="flex gap-x-1.5 font-semibold text-white">
+        {position}
+      </h3>
+      <p class="mt-1 text-sm text-white/60 text-wrap">
+        {desc}
+      </p>
+
+    </div>
+    <!-- End Right Content -->
+  </div>
+  <!-- End Item -->
