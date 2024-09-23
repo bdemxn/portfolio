@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../layouts/MainLayout.astro";
+import giphy from "../../public/img/giphy.webp";
+import SocialPill from "../components/ui/SocialPill.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import LinkIcon from "../components/icons/LinkIcon.astro";
+---
+
+<MainLayout title="Alo? Is Kevin there?">
+  <main class="mt-28 border rounded-xl border-white/20 w-[300px] md:w-[700px] mx-auto px-2 pt-6 pb-2">
+    <section class="font-inter text-center">
+      <Image src={giphy} alt={"alo"} class={"mx-auto mb-2"}/>
+      <p class="mb-10 text-white">
+        I’m always open to discussing new projects, creative ideas, or opportunities to be part of your vision. If you have any questions, feedback, or just want to say hello, feel free to get in touch with me using the form below or through my social media channels.
+      </p>
+
+      <div class="flex md:gap-x-2 md:my-2 md:justify-center flex-col md:flex-row gap-y-2">
+        <SocialPill url="mailto:kb1909zzz@gmail.com">
+          <Briefcase class="stroke-white"/>
+          <p>Send me an email</p>
+        </SocialPill>
+        <SocialPill url="https://www.linkedin.com/in/kb1909zzz/">
+          <LinkIcon class="stroke-white"/>
+          <p>Let's connect</p>
+        </SocialPill>
+        <SocialPill url="/">
+          Back to Homepage
+        </SocialPill>
+      </div>
+    </section>
+  </main>
+</MainLayout>

@@ -1,0 +1,41 @@
+---
+import Briefcase from "../components/icons/Briefcase.astro";
+import SocialPill from "../components/ui/SocialPill.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Upwork from "../components/icons/Upwork.astro";
+import GithubIcon from "../components/icons/GithubIcon.astro";
+import Experience from "../components/sections/Experience.astro";
+import Projects from "../components/sections/Projects.astro";
+---
+
+<MainLayout title="Kevin Bonilla">
+  <main class="font-inter md:mx-auto mx-2 md:w-[1000px] md:my-28">
+    <section class="flex items-center md:h-16 gap-5">
+      <div>
+        <h1 class="font-extrabold w-full md:text-4xl text-6xl text-white"><span class="collapse md:visible">Hello there,</span> I'm Kevin Bonilla👋</h1>
+        <p class="text-slate-300 text-base md:mt-0 mt-3">Software Developer | UI/UX Designer</p>
+      </div>
+    </section>
+    <section class="mt-5 md:w-[750px]">
+      <p class="text-wrap text-white">
+        With 2.5 years in IT, including over a year at <span class="text-blue-400 font-bold">Microsoft-Concentrix</span> and 6 months specializing in <span class="text-yellow-300 font-bold">front-end development</span>, I’m focused on building sleek and efficient user interfaces from Nicaragua.
+      </p>
+      <div class="mt-5 flex flex-col md:flex-row gap-3">
+        <SocialPill url="https://www.linkedin.com/in/kb1909zzz/">
+          <Briefcase class="stroke-white"/>
+          Let's Connect
+        </SocialPill>
+        <SocialPill url="https://www.upwork.com/freelancers/~01ee7674eaf4753663">
+          <Upwork class="stroke-white"/>
+          Hire me
+        </SocialPill>
+        <SocialPill url="https://github.com/bdemxn">
+          <GithubIcon class="stroke-white"/>
+          Github
+        </SocialPill>
+      </div>
+    </section>
+    <Experience />
+    <Projects />
+  </main>
+</MainLayout>
