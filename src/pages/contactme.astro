@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import giphy from "../../public/img/giphy.webp";
 import SocialPill from "../components/ui/SocialPill.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import LinkIcon from "../components/icons/LinkIcon.astro";
 ---
 
 <MainLayout title="Alo? Is Kevin there?">
@@ -10,13 +12,22 @@ import SocialPill from "../components/ui/SocialPill.astro";
     <section class="font-inter text-center">
       <Image src={giphy} alt={"alo"} class={"mx-auto mb-2"}/>
       <p class="mb-10 text-white">
-        You can send me an email touching the link below and you will get an my answer as soon as possible;)
+        I’m always open to discussing new projects, creative ideas, or opportunities to be part of your vision. If you have any questions, feedback, or just want to say hello, feel free to get in touch with me using the form below or through my social media channels.
       </p>
-      <a class="text-blue-500 font-extrabold" href="mailto:kb1909zzz@gmail.com">Send me a DM🚀</a>
-      <p class="text-white my-6">or</p>
+
+      <div class="flex md:gap-x-2 md:my-2 md:justify-center flex-col md:flex-row gap-y-2">
+        <SocialPill url="mailto:kb1909zzz@gmail.com">
+          <Briefcase class="stroke-white"/>
+          <p>Send me an email</p>
+        </SocialPill>
+        <SocialPill url="https://www.linkedin.com/in/kb1909zzz/">
+          <LinkIcon class="stroke-white"/>
+          <p>Let's connect</p>
+        </SocialPill>
+        <SocialPill url="/">
+          Back to Homepage
+        </SocialPill>
+      </div>
     </section>
-    <SocialPill url="/">
-      Back to Homepage
-    </SocialPill>
   </main>
 </MainLayout>
